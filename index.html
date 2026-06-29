@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite SaaS Portfolio | Ashish Pathak</title>
-
-<!-- AOS ANIMATION LIBRARY -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<title>ERP SaaS System | Ashish Pathak</title>
 
 <style>
 *{
@@ -20,7 +17,6 @@ body{
 background:#05070d;
 color:#e6f1ff;
 overflow-x:hidden;
-scroll-behavior:smooth;
 }
 
 /* BACKGROUND */
@@ -28,28 +24,28 @@ scroll-behavior:smooth;
 position:fixed;
 width:100%;
 height:100%;
-z-index:-2;
 background:radial-gradient(circle at top,#0f172a,#000);
+z-index:-2;
 }
 
-.blob{
+.glow{
 position:absolute;
 width:300px;
 height:300px;
 filter:blur(120px);
 opacity:0.25;
 border-radius:50%;
-animation:float 8s infinite ease-in-out;
+animation:float 10s infinite ease-in-out;
 }
 
-.blob1{background:#00ffcc;top:10%;left:10%;}
-.blob2{background:#7c3aed;top:60%;left:70%;}
-.blob3{background:#00aaff;top:80%;left:30%;}
+.g1{background:#00ffcc;top:10%;left:10%;}
+.g2{background:#7c3aed;top:60%;left:70%;}
+.g3{background:#00aaff;top:80%;left:30%;}
 
 @keyframes float{
-0%{transform:translateY(0px);}
+0%{transform:translateY(0);}
 50%{transform:translateY(-60px);}
-100%{transform:translateY(0px);}
+100%{transform:translateY(0);}
 }
 
 /* NAV */
@@ -65,11 +61,10 @@ z-index:100;
 }
 
 nav a{
-color:#fff;
+color:white;
 margin:0 10px;
 text-decoration:none;
 opacity:0.7;
-transition:0.3s;
 }
 
 nav a:hover{
@@ -79,59 +74,38 @@ opacity:1;
 
 /* HERO */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 text-align:center;
-padding:20px;
+padding:120px 20px;
 }
 
 .hero h1{
-font-size:55px;
+font-size:54px;
 background:linear-gradient(90deg,#00ffcc,#7c3aed,#00aaff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{filter:drop-shadow(0 0 10px #00ffcc);}
-to{filter:drop-shadow(0 0 30px #7c3aed);}
 }
 
 .hero p{
 color:#94a3b8;
 margin-top:10px;
-animation:fadeIn 2s ease-in;
 }
 
-/* BUTTON */
 .btn{
 margin-top:20px;
-padding:12px 25px;
-background:linear-gradient(90deg,#00ffcc,#7c3aed);
+padding:12px 22px;
+background:#00ffcc;
 border:none;
 border-radius:10px;
 cursor:pointer;
 font-weight:bold;
-color:#000;
-transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 20px #00ffcc;
-}
-
-/* SECTIONS */
-section{
+/* FEATURES */
+.section{
 padding:80px 10%;
 text-align:center;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -145,19 +119,54 @@ border-radius:12px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 transition:0.4s;
-backdrop-filter:blur(10px);
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.05);
+transform:scale(1.05);
 box-shadow:0 20px 40px rgba(0,255,204,0.2);
 }
 
-/* CONTACT */
-.contact{
+/* DASHBOARD */
+.dashboard{
 background:rgba(255,255,255,0.03);
-padding:30px;
-border-radius:15px;
+padding:60px 10%;
+border-radius:20px;
+margin:40px;
+}
+
+.kpi{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.kpi-box{
+padding:20px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.kpi-box h2{
+color:#00ffcc;
+}
+
+/* PRICING */
+.price{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.plan{
+padding:25px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.plan h2{
+color:#7c3aed;
 }
 
 /* FOOTER */
@@ -167,132 +176,119 @@ padding:20px;
 border-top:1px solid rgba(255,255,255,0.1);
 margin-top:40px;
 }
-
-/* CURSOR GLOW */
-.cursor{
-position:fixed;
-width:15px;
-height:15px;
-background:#00ffcc;
-border-radius:50%;
-pointer-events:none;
-mix-blend-mode:screen;
-transform:translate(-50%,-50%);
-z-index:999;
-}
 </style>
 </head>
 
 <body>
 
 <div class="bg">
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="glow g3"></div>
 </div>
-
-<div class="cursor" id="cursor"></div>
 
 <!-- NAV -->
 <nav>
-<div><b>ASHISH PATHAK</b></div>
+<div><b>ERP SaaS SYSTEM</b></div>
 <div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
+<a href="#features">Features</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero" data-aos="zoom-in">
-<h1>ERP & SaaS Backend Engineer</h1>
-<p id="typing"></p>
-<button class="btn">Download Resume</button>
+<div class="hero">
+<h1>Enterprise ERP SaaS Platform</h1>
+<p>Billing • Inventory • Payments • Tally • DHL • E-Invoice</p>
+<button class="btn">Request Demo</button>
 </div>
 
-<!-- ABOUT -->
-<section id="about" data-aos="fade-up">
-<h2>About Me</h2>
-<p>PHP Developer specializing in ERP systems, SaaS platforms, APIs, payment gateways, Tally integration, and enterprise backend systems.</p>
-</section>
+<!-- FEATURES -->
+<section id="features" class="section">
+<h2>Core Modules</h2>
 
-<!-- SKILLS -->
-<section id="skills">
-<h2 data-aos="fade-up">Skills</h2>
 <div class="grid">
-<div class="card" data-aos="zoom-in">PHP</div>
-<div class="card" data-aos="zoom-in">CodeIgniter</div>
-<div class="card" data-aos="zoom-in">MySQL</div>
-<div class="card" data-aos="zoom-in">REST API</div>
-<div class="card" data-aos="zoom-in">ERP Systems</div>
-<div class="card" data-aos="zoom-in">Payment Gateway</div>
-<div class="card" data-aos="zoom-in">Tally Integration</div>
-<div class="card" data-aos="zoom-in">DHL API</div>
+
+<div class="card">ERP System</div>
+<div class="card">Payment Gateway Integration</div>
+<div class="card">Tally Sync System</div>
+<div class="card">DHL Logistics API</div>
+<div class="card">GST E-Invoicing</div>
+<div class="card">Analytics Engine</div>
+
 </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<h2 data-aos="fade-up">Projects</h2>
-<div class="grid">
+<!-- DASHBOARD -->
+<section id="dashboard" class="dashboard">
 
-<div class="card" data-aos="flip-left">
-<h3>ERP System</h3>
-<p>Billing + Inventory + Automation</p>
+<h2>Live System Dashboard Preview</h2>
+
+<div class="kpi">
+<div class="kpi-box">
+<h2>₹12,50,000</h2>
+<p>Monthly Revenue</p>
 </div>
 
-<div class="card" data-aos="flip-left">
-<h3>Payment System</h3>
-<p>Razorpay / Stripe Integration</p>
+<div class="kpi-box">
+<h2>1,240</h2>
+<p>Active Users</p>
 </div>
 
-<div class="card" data-aos="flip-left">
-<h3>API Engine</h3>
-<p>Scalable REST API backend</p>
+<div class="kpi-box">
+<h2>98%</h2>
+<p>System Uptime</p>
+</div>
+
+<div class="kpi-box">
+<h2>5,600</h2>
+<p>Invoices Generated</p>
+</div>
+</div>
+
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+
+<h2>Pricing Plans</h2>
+
+<div class="price">
+
+<div class="plan">
+<h2>Starter</h2>
+<p>Basic ERP system</p>
+<p>₹999/month</p>
+</div>
+
+<div class="plan">
+<h2>Business</h2>
+<p>ERP + Payments + Reports</p>
+<p>₹2999/month</p>
+</div>
+
+<div class="plan">
+<h2>Enterprise</h2>
+<p>Full SaaS + API + Integrations</p>
+<p>₹9999/month</p>
 </div>
 
 </div>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact" data-aos="fade-up">
-<h2>Contact</h2>
-<div class="contact">
+<section id="contact" class="section">
+<h2>Contact Developer</h2>
 <p>Email: ashishpathak2901@gmail.com</p>
 <p>Phone: 7098425489</p>
-</div>
 </section>
 
 <footer>
-© 2026 Elite SaaS Portfolio | Built for High Salary Jobs 🚀
+© 2026 ERP SaaS System | Built by Ashish Pathak 🚀
 </footer>
-
-<!-- AOS + SCRIPT -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-AOS.init();
-
-/* typing effect */
-let text = "PHP | ERP Systems | SaaS Architect | API Developer";
-let i = 0;
-function type(){
-if(i < text.length){
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-setTimeout(type, 60);
-}
-}
-type();
-
-/* cursor */
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove",(e)=>{
-cursor.style.left = e.pageX + "px";
-cursor.style.top = e.pageY + "px";
-});
-</script>
 
 </body>
 </html>
