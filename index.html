@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashish Pathak | Elite ERP SaaS Developer</title>
+<title>Elite SaaS Portfolio | Ashish Pathak</title>
+
+<!-- AOS ANIMATION LIBRARY -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 *{
@@ -17,6 +20,7 @@ body{
 background:#05070d;
 color:#e6f1ff;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 /* BACKGROUND */
@@ -24,8 +28,8 @@ overflow-x:hidden;
 position:fixed;
 width:100%;
 height:100%;
+z-index:-2;
 background:radial-gradient(circle at top,#0f172a,#000);
-z-index:-3;
 }
 
 .blob{
@@ -35,7 +39,7 @@ height:300px;
 filter:blur(120px);
 opacity:0.25;
 border-radius:50%;
-animation:float 10s infinite ease-in-out;
+animation:float 8s infinite ease-in-out;
 }
 
 .blob1{background:#00ffcc;top:10%;left:10%;}
@@ -43,9 +47,9 @@ animation:float 10s infinite ease-in-out;
 .blob3{background:#00aaff;top:80%;left:30%;}
 
 @keyframes float{
-0%{transform:translateY(0);}
+0%{transform:translateY(0px);}
 50%{transform:translateY(-60px);}
-100%{transform:translateY(0);}
+100%{transform:translateY(0px);}
 }
 
 /* NAV */
@@ -65,8 +69,13 @@ color:#fff;
 margin:0 10px;
 text-decoration:none;
 opacity:0.7;
+transition:0.3s;
 }
-nav a:hover{color:#00ffcc;opacity:1;}
+
+nav a:hover{
+color:#00ffcc;
+opacity:1;
+}
 
 /* HERO */
 .hero{
@@ -80,29 +89,43 @@ padding:20px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:55px;
 background:linear-gradient(90deg,#00ffcc,#7c3aed,#00aaff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{filter:drop-shadow(0 0 10px #00ffcc);}
+to{filter:drop-shadow(0 0 30px #7c3aed);}
 }
 
 .hero p{
 color:#94a3b8;
 margin-top:10px;
+animation:fadeIn 2s ease-in;
 }
 
 /* BUTTON */
 .btn{
 margin-top:20px;
-padding:12px 20px;
-background:#00ffcc;
+padding:12px 25px;
+background:linear-gradient(90deg,#00ffcc,#7c3aed);
 border:none;
 border-radius:10px;
 cursor:pointer;
 font-weight:bold;
+color:#000;
+transition:0.3s;
 }
 
-/* SECTION */
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #00ffcc;
+}
+
+/* SECTIONS */
 section{
 padding:80px 10%;
 text-align:center;
@@ -122,10 +145,11 @@ border-radius:12px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 transition:0.4s;
+backdrop-filter:blur(10px);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px) scale(1.05);
 box-shadow:0 20px 40px rgba(0,255,204,0.2);
 }
 
@@ -144,10 +168,17 @@ border-top:1px solid rgba(255,255,255,0.1);
 margin-top:40px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-.hero h1{font-size:28px;}
-nav{flex-direction:column;}
+/* CURSOR GLOW */
+.cursor{
+position:fixed;
+width:15px;
+height:15px;
+background:#00ffcc;
+border-radius:50%;
+pointer-events:none;
+mix-blend-mode:screen;
+transform:translate(-50%,-50%);
+z-index:999;
 }
 </style>
 </head>
@@ -160,150 +191,108 @@ nav{flex-direction:column;}
 <div class="blob blob3"></div>
 </div>
 
+<div class="cursor" id="cursor"></div>
+
 <!-- NAV -->
 <nav>
 <div><b>ASHISH PATHAK</b></div>
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
-<a href="#resume">Resume</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" data-aos="zoom-in">
 <h1>ERP & SaaS Backend Engineer</h1>
-<p>PHP | CodeIgniter | MySQL | API Architect | System Integrator</p>
+<p id="typing"></p>
 <button class="btn">Download Resume</button>
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" data-aos="fade-up">
 <h2>About Me</h2>
-<p>
-PHP Developer with 2+ years experience in ERP systems, SaaS platforms,
-payment gateways, Tally integration, logistics APIs, and scalable backend systems.
-Built 40+ business websites and enterprise solutions.
-</p>
+<p>PHP Developer specializing in ERP systems, SaaS platforms, APIs, payment gateways, Tally integration, and enterprise backend systems.</p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2>Skills</h2>
+<h2 data-aos="fade-up">Skills</h2>
 <div class="grid">
-<div class="card">PHP CORE</div>
-<div class="card">CodeIgniter</div>
-<div class="card">MySQL</div>
-<div class="card">REST API</div>
-<div class="card">ERP Systems</div>
-<div class="card">SaaS Architecture</div>
-<div class="card">Payment Gateway</div>
-<div class="card">Tally Integration</div>
-<div class="card">DHL API</div>
-<div class="card">Git</div>
-<div class="card">AJAX</div>
-<div class="card">System Design</div>
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2>Experience</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Software Engineer</h3>
-<p>Swiss Tech Unicorn Corp LLP</p>
-</div>
-
-<div class="card">
-<h3>Jr Developer</h3>
-<p>Nopur Software</p>
-</div>
-
-<div class="card">
-<h3>Support Engineer</h3>
-<p>Concentric India Pvt Ltd</p>
-</div>
-
+<div class="card" data-aos="zoom-in">PHP</div>
+<div class="card" data-aos="zoom-in">CodeIgniter</div>
+<div class="card" data-aos="zoom-in">MySQL</div>
+<div class="card" data-aos="zoom-in">REST API</div>
+<div class="card" data-aos="zoom-in">ERP Systems</div>
+<div class="card" data-aos="zoom-in">Payment Gateway</div>
+<div class="card" data-aos="zoom-in">Tally Integration</div>
+<div class="card" data-aos="zoom-in">DHL API</div>
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Enterprise Systems Built</h2>
+<h2 data-aos="fade-up">Projects</h2>
 <div class="grid">
 
-<div class="card">
+<div class="card" data-aos="flip-left">
 <h3>ERP System</h3>
-<p>Billing, inventory, user roles, automation system</p>
+<p>Billing + Inventory + Automation</p>
 </div>
 
-<div class="card">
-<h3>Payment Integration</h3>
-<p>Razorpay / Stripe / Paytm gateway system</p>
+<div class="card" data-aos="flip-left">
+<h3>Payment System</h3>
+<p>Razorpay / Stripe Integration</p>
 </div>
 
-<div class="card">
-<h3>Tally Integration</h3>
-<p>Accounting sync & financial automation</p>
+<div class="card" data-aos="flip-left">
+<h3>API Engine</h3>
+<p>Scalable REST API backend</p>
 </div>
 
-<div class="card">
-<h3>DHL Logistics System</h3>
-<p>Shipment tracking + AWB generation API</p>
-</div>
-
-<div class="card">
-<h3>E-Invoicing System</h3>
-<p>GST compliant invoice automation</p>
-</div>
-
-<div class="card">
-<h3>Analytics Dashboard</h3>
-<p>One-click reports & business insights</p>
-</div>
-
-</div>
-</section>
-
-<!-- RESUME -->
-<section id="resume">
-<h2>Professional Summary</h2>
-<div class="contact">
-<p>
-Strong backend engineer specialized in scalable ERP & SaaS systems with API integrations,
-automation workflows, and enterprise architecture.
-</p>
-</div>
-
-<br>
-
-<h3>Core Strength</h3>
-<div class="grid">
-<div class="card">Backend Architecture</div>
-<div class="card">API Integration</div>
-<div class="card">Business Automation</div>
-<div class="card">Database Optimization</div>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" data-aos="fade-up">
 <h2>Contact</h2>
 <div class="contact">
 <p>Email: ashishpathak2901@gmail.com</p>
 <p>Phone: 7098425489</p>
-<p>Location: Vadodara, Gujarat</p>
 </div>
 </section>
 
 <footer>
-© 2026 Ashish Pathak | Elite ERP SaaS Developer 🚀
+© 2026 Elite SaaS Portfolio | Built for High Salary Jobs 🚀
 </footer>
+
+<!-- AOS + SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+/* typing effect */
+let text = "PHP | ERP Systems | SaaS Architect | API Developer";
+let i = 0;
+function type(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(type, 60);
+}
+}
+type();
+
+/* cursor */
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left = e.pageX + "px";
+cursor.style.top = e.pageY + "px";
+});
+</script>
 
 </body>
 </html>
