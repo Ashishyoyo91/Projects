@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ERP SaaS System | Ashish Pathak</title>
+<title>ERP SaaS Portfolio | Ashish Pathak</title>
 
 <style>
 *{
@@ -17,6 +17,7 @@ body{
 background:#05070d;
 color:#e6f1ff;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 /* BACKGROUND */
@@ -28,19 +29,19 @@ background:radial-gradient(circle at top,#0f172a,#000);
 z-index:-2;
 }
 
-.glow{
+.blob{
 position:absolute;
 width:300px;
 height:300px;
 filter:blur(120px);
 opacity:0.25;
 border-radius:50%;
-animation:float 10s infinite ease-in-out;
+animation:float 8s infinite ease-in-out;
 }
 
-.g1{background:#00ffcc;top:10%;left:10%;}
-.g2{background:#7c3aed;top:60%;left:70%;}
-.g3{background:#00aaff;top:80%;left:30%;}
+.b1{background:#00ffcc;top:10%;left:10%;}
+.b2{background:#7c3aed;top:60%;left:70%;}
+.b3{background:#00aaff;top:80%;left:30%;}
 
 @keyframes float{
 0%{transform:translateY(0);}
@@ -61,16 +62,13 @@ z-index:100;
 }
 
 nav a{
-color:white;
+color:#fff;
 margin:0 10px;
 text-decoration:none;
 opacity:0.7;
 }
 
-nav a:hover{
-color:#00ffcc;
-opacity:1;
-}
+nav a:hover{color:#00ffcc;opacity:1;}
 
 /* HERO */
 .hero{
@@ -79,7 +77,7 @@ padding:120px 20px;
 }
 
 .hero h1{
-font-size:54px;
+font-size:55px;
 background:linear-gradient(90deg,#00ffcc,#7c3aed,#00aaff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -92,20 +90,21 @@ margin-top:10px;
 
 .btn{
 margin-top:20px;
-padding:12px 22px;
+padding:12px 25px;
 background:#00ffcc;
 border:none;
 border-radius:10px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 }
 
-/* FEATURES */
-.section{
+/* SECTION */
+section{
 padding:80px 10%;
 text-align:center;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -122,16 +121,16 @@ transition:0.4s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px);
 box-shadow:0 20px 40px rgba(0,255,204,0.2);
 }
 
 /* DASHBOARD */
 .dashboard{
 background:rgba(255,255,255,0.03);
-padding:60px 10%;
-border-radius:20px;
 margin:40px;
+padding:60px;
+border-radius:20px;
 }
 
 .kpi{
@@ -144,29 +143,15 @@ gap:20px;
 padding:20px;
 border-radius:12px;
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
 }
 
-.kpi-box h2{
-color:#00ffcc;
-}
+.kpi-box h2{color:#00ffcc;}
 
-/* PRICING */
-.price{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.plan{
-padding:25px;
-border-radius:12px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-}
-
-.plan h2{
-color:#7c3aed;
+/* CONTACT */
+.contact{
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:15px;
 }
 
 /* FOOTER */
@@ -182,112 +167,167 @@ margin-top:40px;
 <body>
 
 <div class="bg">
-<div class="glow g1"></div>
-<div class="glow g2"></div>
-<div class="glow g3"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
 </div>
 
 <!-- NAV -->
 <nav>
-<div><b>ERP SaaS SYSTEM</b></div>
+<div><b>ERP SAAS PORTFOLIO</b></div>
 <div>
-<a href="#features">Features</a>
-<a href="#dashboard">Dashboard</a>
-<a href="#pricing">Pricing</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#dashboard">System</a>
+<a href="#interview">Interview</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Enterprise ERP SaaS Platform</h1>
-<p>Billing • Inventory • Payments • Tally • DHL • E-Invoice</p>
-<button class="btn">Request Demo</button>
+<h1>ERP SaaS Backend Engineer</h1>
+<p>PHP | CodeIgniter | MySQL | API | ERP Systems | SaaS Architecture</p>
+<button class="btn">Download Resume</button>
 </div>
 
-<!-- FEATURES -->
-<section id="features" class="section">
-<h2>Core Modules</h2>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>
+PHP Developer with 2+ years experience in ERP systems, SaaS platforms,
+payment gateways, Tally integration, DHL APIs, and enterprise backend systems.
+Built 40+ business applications and automation systems.
+</p>
+</section>
 
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">PHP</div>
+<div class="card">CodeIgniter</div>
+<div class="card">MySQL</div>
+<div class="card">REST API</div>
+<div class="card">ERP Systems</div>
+<div class="card">SaaS Architecture</div>
+<div class="card">Payment Gateway</div>
+<div class="card">Tally Integration</div>
+<div class="card">DHL API</div>
+<div class="card">Git</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Enterprise Projects</h2>
 <div class="grid">
 
-<div class="card">ERP System</div>
-<div class="card">Payment Gateway Integration</div>
-<div class="card">Tally Sync System</div>
-<div class="card">DHL Logistics API</div>
-<div class="card">GST E-Invoicing</div>
-<div class="card">Analytics Engine</div>
+<div class="card">
+<h3>ERP System</h3>
+<p>Billing + Inventory + Automation</p>
+</div>
+
+<div class="card">
+<h3>Payment System</h3>
+<p>Razorpay / Stripe Integration</p>
+</div>
+
+<div class="card">
+<h3>Tally Sync</h3>
+<p>Accounting automation system</p>
+</div>
+
+<div class="card">
+<h3>DHL Logistics API</h3>
+<p>Shipment tracking system</p>
+</div>
+
+<div class="card">
+<h3>E-Invoice System</h3>
+<p>GST billing automation</p>
+</div>
+
+<div class="card">
+<h3>Analytics Dashboard</h3>
+<p>Business reporting system</p>
+</div>
 
 </div>
 </section>
 
-<!-- DASHBOARD -->
+<!-- SYSTEM DASHBOARD -->
 <section id="dashboard" class="dashboard">
 
-<h2>Live System Dashboard Preview</h2>
+<h2>Live ERP SaaS System Preview</h2>
 
 <div class="kpi">
 <div class="kpi-box">
-<h2>₹12,50,000</h2>
-<p>Monthly Revenue</p>
+<h2>₹15,00,000</h2>
+<p>Monthly Revenue System</p>
 </div>
 
 <div class="kpi-box">
-<h2>1,240</h2>
+<h2>1,800+</h2>
 <p>Active Users</p>
 </div>
 
 <div class="kpi-box">
-<h2>98%</h2>
+<h2>99%</h2>
 <p>System Uptime</p>
 </div>
 
 <div class="kpi-box">
-<h2>5,600</h2>
+<h2>6,200</h2>
 <p>Invoices Generated</p>
 </div>
 </div>
 
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="section">
+<!-- INTERVIEW SECTION -->
+<section id="interview">
+<h2>Job Guarantee Interview Pack</h2>
 
-<h2>Pricing Plans</h2>
-
-<div class="price">
-
-<div class="plan">
-<h2>Starter</h2>
-<p>Basic ERP system</p>
-<p>₹999/month</p>
+<div class="card">
+<h3>Self Introduction</h3>
+<p>
+ERP & SaaS Backend Engineer with experience in PHP, CodeIgniter, APIs,
+ERP systems, payment integrations, and enterprise solutions.
+</p>
 </div>
 
-<div class="plan">
-<h2>Business</h2>
-<p>ERP + Payments + Reports</p>
-<p>₹2999/month</p>
+<br>
+
+<div class="card">
+<h3>Strengths</h3>
+<p>Backend Architecture | API Integration | ERP Systems | Database Optimization</p>
 </div>
 
-<div class="plan">
-<h2>Enterprise</h2>
-<p>Full SaaS + API + Integrations</p>
-<p>₹9999/month</p>
-</div>
+<br>
 
+<div class="card">
+<h3>Project Experience</h3>
+<p>
+ERP systems, SaaS platforms, Tally integration, DHL API, GST e-invoicing, payment gateways.
+</p>
 </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-<h2>Contact Developer</h2>
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
 <p>Email: ashishpathak2901@gmail.com</p>
 <p>Phone: 7098425489</p>
+<p>Location: Vadodara, Gujarat</p>
+</div>
 </section>
 
 <footer>
-© 2026 ERP SaaS System | Built by Ashish Pathak 🚀
+© 2026 ERP SaaS Portfolio | Built for High Salary Jobs 🚀
 </footer>
 
 </body>
