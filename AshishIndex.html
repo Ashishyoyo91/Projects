@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Pathak | Elite ERP SaaS Developer</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+background:#05070d;
+color:#e6f1ff;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at top,#0f172a,#000);
+z-index:-3;
+}
+
+.blob{
+position:absolute;
+width:300px;
+height:300px;
+filter:blur(120px);
+opacity:0.25;
+border-radius:50%;
+animation:float 10s infinite ease-in-out;
+}
+
+.blob1{background:#00ffcc;top:10%;left:10%;}
+.blob2{background:#7c3aed;top:60%;left:70%;}
+.blob3{background:#00aaff;top:80%;left:30%;}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-60px);}
+100%{transform:translateY(0);}
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:#fff;
+margin:0 10px;
+text-decoration:none;
+opacity:0.7;
+}
+nav a:hover{color:#00ffcc;opacity:1;}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:52px;
+background:linear-gradient(90deg,#00ffcc,#7c3aed,#00aaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+margin-top:20px;
+padding:12px 20px;
+background:#00ffcc;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* SECTION */
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+padding:20px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+transition:0.4s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 20px 40px rgba(0,255,204,0.2);
+}
+
+/* CONTACT */
+.contact{
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:28px;}
+nav{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+<div><b>ASHISH PATHAK</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#resume">Resume</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>ERP & SaaS Backend Engineer</h1>
+<p>PHP | CodeIgniter | MySQL | API Architect | System Integrator</p>
+<button class="btn">Download Resume</button>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>
+PHP Developer with 2+ years experience in ERP systems, SaaS platforms,
+payment gateways, Tally integration, logistics APIs, and scalable backend systems.
+Built 40+ business websites and enterprise solutions.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">PHP</div>
+<div class="card">CodeIgniter</div>
+<div class="card">MySQL</div>
+<div class="card">REST API</div>
+<div class="card">ERP Systems</div>
+<div class="card">SaaS Architecture</div>
+<div class="card">Payment Gateway</div>
+<div class="card">Tally Integration</div>
+<div class="card">DHL API</div>
+<div class="card">Git</div>
+<div class="card">AJAX</div>
+<div class="card">System Design</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Software Engineer</h3>
+<p>Swiss Tech Unicorn Corp LLP</p>
+</div>
+
+<div class="card">
+<h3>Jr Developer</h3>
+<p>Nopur Software</p>
+</div>
+
+<div class="card">
+<h3>Support Engineer</h3>
+<p>Concentric India Pvt Ltd</p>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Enterprise Systems Built</h2>
+<div class="grid">
+
+<div class="card">
+<h3>ERP System</h3>
+<p>Billing, inventory, user roles, automation system</p>
+</div>
+
+<div class="card">
+<h3>Payment Integration</h3>
+<p>Razorpay / Stripe / Paytm gateway system</p>
+</div>
+
+<div class="card">
+<h3>Tally Integration</h3>
+<p>Accounting sync & financial automation</p>
+</div>
+
+<div class="card">
+<h3>DHL Logistics System</h3>
+<p>Shipment tracking + AWB generation API</p>
+</div>
+
+<div class="card">
+<h3>E-Invoicing System</h3>
+<p>GST compliant invoice automation</p>
+</div>
+
+<div class="card">
+<h3>Analytics Dashboard</h3>
+<p>One-click reports & business insights</p>
+</div>
+
+</div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+<h2>Professional Summary</h2>
+<div class="contact">
+<p>
+Strong backend engineer specialized in scalable ERP & SaaS systems with API integrations,
+automation workflows, and enterprise architecture.
+</p>
+</div>
+
+<br>
+
+<h3>Core Strength</h3>
+<div class="grid">
+<div class="card">Backend Architecture</div>
+<div class="card">API Integration</div>
+<div class="card">Business Automation</div>
+<div class="card">Database Optimization</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
+<p>Email: ashishpathak2901@gmail.com</p>
+<p>Phone: 7098425489</p>
+<p>Location: Vadodara, Gujarat</p>
+</div>
+</section>
+
+<footer>
+© 2026 Ashish Pathak | Elite ERP SaaS Developer 🚀
+</footer>
+
+</body>
+</html>
