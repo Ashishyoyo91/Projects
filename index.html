@@ -20,36 +20,83 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* BACKGROUND */
+/* ================= PREMIUM BACKGROUND ================= */
 .bg{
 position:fixed;
 width:100%;
 height:100%;
-background:radial-gradient(circle at top,#0f172a,#000);
 z-index:-2;
+overflow:hidden;
 }
 
+/* gradient mesh */
+.gradient-mesh{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(0,255,204,0.15), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(124,58,237,0.15), transparent 40%),
+radial-gradient(circle at 40% 80%, rgba(0,170,255,0.15), transparent 40%);
+animation:meshMove 12s infinite alternate ease-in-out;
+}
+
+@keyframes meshMove{
+0%{transform:scale(1) rotate(0deg);}
+100%{transform:scale(1.2) rotate(10deg);}
+}
+
+/* glowing blobs */
 .blob{
 position:absolute;
-width:300px;
-height:300px;
-filter:blur(120px);
+width:350px;
+height:350px;
+filter:blur(140px);
 opacity:0.25;
 border-radius:50%;
-animation:float 8s infinite ease-in-out;
+animation:float 10s infinite ease-in-out;
 }
 
 .b1{background:#00ffcc;top:10%;left:10%;}
-.b2{background:#7c3aed;top:60%;left:70%;}
-.b3{background:#00aaff;top:80%;left:30%;}
+.b2{background:#7c3aed;top:55%;left:70%;}
+.b3{background:#00aaff;top:75%;left:25%;}
 
 @keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-60px);}
-100%{transform:translateY(0);}
+0%{transform:translateY(0) scale(1);}
+50%{transform:translateY(-80px) scale(1.1);}
+100%{transform:translateY(0) scale(1);}
 }
 
-/* NAV */
+/* particles */
+.particles{
+position:absolute;
+width:100%;
+height:100%;
+background-image:radial-gradient(#ffffff22 1px, transparent 1px);
+background-size:50px 50px;
+animation:moveParticles 25s linear infinite;
+opacity:0.25;
+}
+
+@keyframes moveParticles{
+0%{transform:translateY(0);}
+100%{transform:translateY(-300px);}
+}
+
+/* noise */
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:url("https://www.transparenttextures.com/patterns/noise.png");
+opacity:0.04;
+}
+
+/* ================= NAV ================= */
 nav{
 display:flex;
 justify-content:space-between;
@@ -70,7 +117,7 @@ opacity:0.7;
 
 nav a:hover{color:#00ffcc;opacity:1;}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
 text-align:center;
 padding:120px 20px;
@@ -98,13 +145,12 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 section{
 padding:80px 10%;
 text-align:center;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -125,7 +171,7 @@ transform:translateY(-10px);
 box-shadow:0 20px 40px rgba(0,255,204,0.2);
 }
 
-/* DASHBOARD */
+/* dashboard */
 .dashboard{
 background:rgba(255,255,255,0.03);
 margin:40px;
@@ -147,14 +193,14 @@ background:rgba(255,255,255,0.05);
 
 .kpi-box h2{color:#00ffcc;}
 
-/* CONTACT */
+/* contact */
 .contact{
 background:rgba(255,255,255,0.03);
 padding:30px;
 border-radius:15px;
 }
 
-/* FOOTER */
+/* footer */
 footer{
 text-align:center;
 padding:20px;
@@ -166,10 +212,13 @@ margin-top:40px;
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg">
+<div class="gradient-mesh"></div>
 <div class="blob b1"></div>
 <div class="blob b2"></div>
 <div class="blob b3"></div>
+<div class="particles"></div>
 </div>
 
 <!-- NAV -->
@@ -178,6 +227,8 @@ margin-top:40px;
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#startup">Startup</a>
+<a href="#offer">Offer</a>
 <a href="#projects">Projects</a>
 <a href="#dashboard">System</a>
 <a href="#interview">Interview</a>
@@ -188,7 +239,7 @@ margin-top:40px;
 <!-- HERO -->
 <div class="hero">
 <h1>ERP SaaS Backend Engineer</h1>
-<p>PHP | CodeIgniter | MySQL | API | ERP Systems | SaaS Architecture</p>
+<p>Founder of ERP SaaS Startup | PHP | CodeIgniter | MySQL | API | ERP Systems</p>
 <button class="btn">Download Resume</button>
 </div>
 
@@ -218,189 +269,73 @@ Built 40+ business applications and automation systems.
 <div class="card">Git</div>
 </div>
 </section>
-<!-- STARTUP SECTION -->
-<section id="startup">
 
+<!-- STARTUP -->
+<section id="startup">
 <h2>Startup & Clients</h2>
 
 <div class="card">
-<h3>I am Founder of ERP SaaS Startup</h3>
-<p>
-I run a small ERP SaaS development setup where I build and deliver 
-custom business software solutions for multiple clients including SMEs, shops, and service-based businesses.
-</p>
+<h3>ERP SaaS Founder</h3>
+<p>Building scalable ERP solutions for SMEs and business clients.</p>
 </div>
 
 <br>
 
 <div class="grid">
-
-<div class="card">
-<h3>💼 Client Base</h3>
-<p>20+ Active Business Clients</p>
+<div class="card">20+ Active Clients</div>
+<div class="card">₹2999/month SaaS Model</div>
+<div class="card">ERP + API + Automation</div>
+<div class="card">Business Digitalization</div>
 </div>
-
-<div class="card">
-<h3>🚀 Business Model</h3>
-<p>Monthly SaaS Subscription + One-time ERP Setup</p>
-</div>
-
-<div class="card">
-<h3>💰 Pricing Strategy</h3>
-<p>Starting from ₹2999/month for basic ERP systems</p>
-</div>
-
-<div class="card">
-<h3>⚙️ Services</h3>
-<p>
-ERP Systems, Billing Software, Inventory Management, Payment Integration, 
-Tally Sync, DHL API, E-Invoicing
-</p>
-</div>
-
-</div>
-
-<br>
-
-<div class="card">
-<h3>📈 Vision</h3>
-<p>
-To build a scalable SaaS product that helps small and medium businesses automate 
-their operations and move to digital ERP systems at affordable cost.
-</p>
-</div>
-
 </section>
-<!-- WHAT WE OFFER SECTION -->
-<section id="offer">
 
+<!-- WHAT WE OFFER -->
+<section id="offer">
 <h2>What We Offer</h2>
 
-<p style="margin-top:10px;color:#94a3b8;">
-We provide end-to-end business automation solutions designed for small and medium enterprises.
-</p>
-
 <div class="grid">
 
-<div class="card">
-<h3>🏢 ERP Development</h3>
-<p>
-Complete ERP systems including billing, inventory, purchase, sales, and user management.
-</p>
-</div>
-
-<div class="card">
-<h3>💳 Payment Integration</h3>
-<p>
-Razorpay, Stripe, Paytm integration with secure transaction handling and automation.
-</p>
-</div>
-
-<div class="card">
-<h3>📦 Inventory Management</h3>
-<p>
-Real-time stock tracking, product management, purchase & sales reporting system.
-</p>
-</div>
-
-<div class="card">
-<h3>🧾 GST E-Invoicing</h3>
-<p>
-Automated GST invoice generation with PDF export and tax compliance support.
-</p>
-</div>
-
-<div class="card">
-<h3>🔗 API Integration</h3>
-<p>
-Tally ERP, DHL Logistics, SMS, Email, and third-party API integrations.
-</p>
-</div>
-
-<div class="card">
-<h3>📊 Business Analytics</h3>
-<p>
-Dashboard systems with real-time reports, revenue tracking, and insights.
-</p>
-</div>
+<div class="card">ERP Development</div>
+<div class="card">Payment Integration</div>
+<div class="card">Inventory System</div>
+<div class="card">GST E-Invoice</div>
+<div class="card">API Integration</div>
+<div class="card">Analytics Dashboard</div>
 
 </div>
-
 </section>
-  
+
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Enterprise Projects</h2>
+<h2>Projects</h2>
+
 <div class="grid">
-
-<div class="card">
-<h3>ERP System</h3>
-<p>Billing + Inventory + Automation</p>
-</div>
-
-<div class="card">
-<h3>Payment System</h3>
-<p>Razorpay / Stripe Integration</p>
-</div>
-
-<div class="card">
-<h3>Tally Sync</h3>
-<p>Accounting automation system</p>
-</div>
-
-<div class="card">
-<h3>DHL Logistics API</h3>
-<p>Shipment tracking system</p>
-</div>
-
-<div class="card">
-<h3>E-Invoice System</h3>
-<p>GST billing automation</p>
-</div>
-
-<div class="card">
-<h3>Analytics Dashboard</h3>
-<p>Business reporting system</p>
-</div>
-
+<div class="card">ERP System</div>
+<div class="card">Payment Gateway System</div>
+<div class="card">Tally Integration</div>
+<div class="card">DHL API System</div>
+<div class="card">E-Invoice System</div>
+<div class="card">Analytics Dashboard</div>
 </div>
 </section>
 
-<!-- SYSTEM DASHBOARD -->
+<!-- DASHBOARD -->
 <section id="dashboard" class="dashboard">
-
-<h2>Live ERP SaaS System Preview</h2>
+<h2>Live System</h2>
 
 <div class="kpi">
-
-
-<div class="kpi-box">
-<h2>56+</h2>
-<p>Active Users</p>
+<div class="kpi-box"><h2>20+</h2><p>Clients</p></div>
+<div class="kpi-box"><h2>98%</h2><p>Uptime</p></div>
+<div class="kpi-box"><h2>98K</h2><p>Invoices</p></div>
 </div>
-
-<div class="kpi-box">
-<h2>98%</h2>
-<p>System Uptime</p>
-</div>
-
-<div class="kpi-box">
-<h2>98,281</h2>
-<p>Invoices Generated</p>
-</div>
-</div>
-
 </section>
 
-<!-- INTERVIEW SECTION -->
+<!-- INTERVIEW -->
 <section id="interview">
 
 <div class="card">
 <h3>Self Introduction</h3>
-<p>
-ERP & SaaS Backend Engineer with experience in PHP, CodeIgniter, APIs,
-ERP systems, payment integrations, and enterprise solutions.
-</p>
+<p>ERP & SaaS Backend Engineer specialized in PHP, APIs, and enterprise systems.</p>
 </div>
 
 <br>
@@ -413,10 +348,8 @@ ERP systems, payment integrations, and enterprise solutions.
 <br>
 
 <div class="card">
-<h3>Project Experience</h3>
-<p>
-ERP systems, SaaS platforms, Tally integration, DHL API, GST e-invoicing, payment gateways.
-</p>
+<h3>Experience</h3>
+<p>ERP systems, SaaS platforms, payment systems, logistics integrations.</p>
 </div>
 
 </section>
@@ -432,7 +365,7 @@ ERP systems, SaaS platforms, Tally integration, DHL API, GST e-invoicing, paymen
 </section>
 
 <footer>
-© 2026 Ashish Enterprise 
+© 2026 ERP SaaS Portfolio | Built for High Salary Jobs 🚀
 </footer>
 
 </body>
